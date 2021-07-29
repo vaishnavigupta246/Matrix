@@ -1,0 +1,47 @@
+//https://practice.geeksforgeeks.org/problems/spirally-traversing-a-matrix-1587115621/1
+
+#include<iostream>
+using namespace std;
+int main()
+{
+ int m,n,i,j,k,l;
+ cin>>m>>n;
+ int a[m][n];
+ for(int i=0;i<m;i++)
+ {
+     for(int j=0;j<n;j++)
+     {
+         cin>>a[i][j];
+     }
+     
+ }
+ int row_st=0;
+ int col_st=0;
+ int row_end=m-1;
+ int col_end=n-1;
+ while(row_st<=row_end && col_st<=col_end)
+ {
+     for(i=col_st;i<=col_end;i++)
+     {
+         cout<<a[row_st][i]<<" ";
+     }
+     row_st+=1;
+     
+     for(j=row_st;j<=row_end;j++)
+     {
+         cout<<a[j][col_end]<<" ";
+     }
+     col_end-=1; 
+       for(k=col_end;k>=col_st;k--)
+     {
+         cout<<a[row_end][k]<<" ";
+     }
+     row_end-=1;
+     for(l=row_end;l>=row_st;l--)
+     {
+         cout<<a[l][col_st]<<"  ";
+     }
+     col_st+=1;
+ }
+    return 0;
+}    
