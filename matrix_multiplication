@@ -1,0 +1,39 @@
+ #include<iostream>
+ using namespace std;
+ int main()
+ {
+     int n,m,r;
+     cin>>m>>n>>r;
+     int a[m][n];
+     int b[n][r];
+     int c[m][r];
+     for(int i=0;i<m;i++)
+     {
+         for(int j=0;j<n;j++)
+         {
+             cin>>a[i][j];
+         }
+     }
+      for(int i=0;i<m;i++)
+     {
+         for(int j=0;j<n;j++)
+         {
+             cin>>b[i][j];
+         }
+         
+     }
+     for(int d=0;d<m;d++)
+     {
+         for(int k=0;k<n;k++)
+     {
+         for(l=0;l<n;l++)
+         {
+             sum=((a[k][l])*(b[l][k]))+sum;
+         }
+         cout<<sum;
+         sum=0;
+     }
+     cout<<endl;
+     }
+     return 0;
+ }
